@@ -45,5 +45,5 @@ Feel free to add more cat images and include them in the `CAT_MAP` dictionary.
 
 ### :star: Credits
 
-This project is inspired by a creative Instagram reel of Shana Nursoo (@reinesana) !  
+This project is inspired by a very creative Instagram reel of Shana Nursoo (@reinesana) !  
 This project is licensed under the MIT License - see the LICENSE file for details.
