@@ -62,7 +62,7 @@ def detect_expression(rgb_frame):
     # print(f"Top Moves: {sorted_scores[:3]}", end='\r')
 
     # Known expressions
-    if score['mouthLowerDownLeft'] > 0.65 and score['mouthLowerDownRight'] > 0.65:
+    if score['mouthLowerDownLeft'] > 0.5 and score['mouthLowerDownRight'] > 0.5:
         return 'tongue'
     if score['mouthPucker'] > 0.85:
         return 'pucker'
@@ -70,12 +70,12 @@ def detect_expression(rgb_frame):
         return 'shocked'
     if score['eyeBlinkLeft'] > 0.5 and score['eyeBlinkRight'] > 0.5:
         return 'sleepy'
-    if score['eyeBlinkLeft'] > 0.25 or score['eyeBlinkRight'] > 0.25:
-        return 'wink'
+    if score['mouthSmileLeft'] > 0.65 and score['mouthSmileRight'] > 0.65:
+        return 'happy'
     if score['mouthShrugLower'] > 0.8 and score['mouthShrugUpper'] > 0.4:
         return 'sad'
-    if score['mouthSmileLeft'] > 0.7 and score['mouthSmileRight'] > 0.7:
-        return 'happy'
+    if score['eyeBlinkLeft'] > 0.3 or score['eyeBlinkRight'] > 0.3:
+        return 'wink'
     
     return 'neutral'
 
