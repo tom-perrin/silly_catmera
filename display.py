@@ -1,50 +1,29 @@
 ### Imports
-import matplotlib.pyplot as plt
-import matplotlib.image as img
-from matplotlib.animation import FuncAnimation
 
-import os
+import matplotlib.pyplot as plt
 
 # --------------------------------------------------
 
 ### Script
 
-# Define global image folder
-im_folder = './silly_cats'
-
-# Image displaying function
-def im_display(im_name, extension='jpg', mydpi=100):
+def setup_window(w, h, mydpi=100):
     '''
-    Displays image located at {im_folder}/{im_name}.{ext}
-    
-    :param im_name: name of the image
+    Sets the window up to display the silly cat images
+
+    :param w: width of displayed image
+    :param h: height of displayed image
+    :param dpi: DPI of the screen on which the image is displayed
     '''
-    im_path = os.path.join(im_folder, im_name+'.'+extension)
-
-    # Check image path
-    if not os.path.exists(im_path):
-        print(f'ERROR: Cannot find file at {os.path.abspath(im_path)}')
+    plt.rcParams['toolbar'] = 'None' # Remove toolbar
+    fig = plt.figure(num='Silly Catmera', figsize=(w/mydpi, h/mydpi), dpi=mydpi)
     
-    else:
-        im_data = img.imread(im_path)
+    # Left subplot : camera
+    ax_cam = fig.add_axes([0, 0, 0.5, 1])
+    ax_cam.axis('off')
+    im_cam = ax_cam.imshow([[0]], aspect='equal')
 
-        height, width, depth = im_data.shape
-        myfigsize = (height/mydpi, width/mydpi)
-
-        plt.rcParams['toolbar'] = 'None' # Remove toolbar
-        fig = plt.figure(num='Silly Catmera', figsize=myfigsize, dpi=mydpi)
-        
-        ax = fig.add_axes([0, 0, 1, 1])
-        ax.axis('off')
-        im = ax.imshow(im_data, aspect='equal')
-
-        def update(frame):
-            im.set_data(im_data)
-            return [im]
-
-        ani = FuncAnimation(fig, update, frames=None, interval=50, blit=True)
-        plt.show()
-
-# Test
-im_name = 'bleh'
-im_display(im_name)
+    # Right subplot : silly cat
+    ax_cat = fig.add_axes([0.5, 0, 0.5, 1])
+    ax_cat.axis('off')
+    im_cat = ax_cat.imshow([[0]], aspect='equal')
+    return fig, im_cam, im_cat
