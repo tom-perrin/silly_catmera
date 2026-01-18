@@ -39,9 +39,9 @@ The app has the following priority system during recognition :
 
 ### :hammer: Troubleshooting
 
-In case some images are not appearing, you can uncomment the Debugging section of the `detect_expression` function in `silly_cater.py` in order to see the top 3 face blenshapes in real-time.  
+In case some images are not appearing, you can uncomment the Debugging section of the `detect_expression` function in `silly_cater.py` in order to see the top scores for face blenshapes in real-time.  
 You can also customize the threshold values in the same function.  
-Feel free to add more cat images and include them in the `CAT_MAP` dictionary.
+Feel free to add more cat images and include them in the `CAT_MAP` dictionary (currently, all image files are in .jpg format).
 
 ### :star: Credits
 
