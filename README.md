@@ -1,6 +1,6 @@
 # :cat: Silly Catmera
 
-A real-time facial expression and hand gesture recognition displaying silly cat images to match your mood, using OpenCV and Google MediaPipe.
+A real-time facial expression and hand gesture recognition program displaying silly cat images to match your mood, using OpenCV and Google MediaPipe.
 
 ### :triangular_ruler: Project Structure
 
