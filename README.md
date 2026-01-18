@@ -37,7 +37,7 @@ The app has the following priority system during recognition :
 - **Expressions:** If no gesture is present, the app analyses facial blenshapes (smile, sad, ...).
 - **Default:** If no particular movement is detected, the app default to `larry` (neutral).
 
-### :hammer: Troubleshooting
+### :hammer_and_wrench: Troubleshooting
 
 In case some images are not appearing, you can uncomment the Debugging section of the `detect_expression` function in `silly_cater.py` in order to see the top scores for face blenshapes in real-time.  
 You can also customize the threshold values in the same function.  
