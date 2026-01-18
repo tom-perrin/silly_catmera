@@ -30,7 +30,7 @@ pip install -r requirements.txt
 python main.py
 ```
 
-### :brain: Logic Hierarchy
+### :brain: Logic
 
 The app has the following priority system during recognition :
 - **Gestures:** If a hand is detected (ThumbsUp, Victory, ...), the corresponding cat will be shown directly.
