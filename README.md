@@ -27,7 +27,7 @@ pip install -r requirements.txt
 
 **3. Run the app:** 
 ```bash
-python main.py`
+python main.py
 ```
 
 ### :brain: Logic Hierarchy
